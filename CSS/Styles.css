@@ -269,3 +269,69 @@ h4 {
     background-color: #ddd;
 }
 
+#blog {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+#blog h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.blog-post {
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.blog-post p {
+    color: #555;
+}
+
+footer {
+    background: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #ccc;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .team-member {
+        flex: 1 1 calc(45% - 20px);
+    }
+
+    #blog {
+        padding: 15px;
+        margin: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-member {
+        flex: 1 1 100%;
+    }
+
+    #blog {
+        padding: 10px;
+        margin: 5px;
+    }
+}
