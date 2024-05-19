@@ -335,3 +335,57 @@ footer p {
         margin: 5px;
     }
 }
+
+#faq {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+#faq h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.faq-item {
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.faq-item h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.faq-item p {
+    color: #555;
+}
+
+
+@media (max-width: 768px) {
+    .team-member {
+        flex: 1 1 calc(45% - 20px);
+    }
+
+    #faq {
+        padding: 15px;
+        margin: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-member {
+        flex: 1 1 100%;
+    }
+
+    #faq {
+        padding: 10px;
+        margin: 5px;
+    }
+}
