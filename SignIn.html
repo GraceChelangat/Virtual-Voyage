@@ -60,6 +60,12 @@
                 alert('Please enter a valid email address.');
                 event.preventDefault();
                 return;
+            }
+            // Validate password length
+            if (passwordInput.value.length < 8) {
+                alert('Password must be at least 8 characters long.');
+                event.preventDefault();
+                return;
             };
     </script>
             
