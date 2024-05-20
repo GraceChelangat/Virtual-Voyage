@@ -61,18 +61,21 @@
                 event.preventDefault();
                 return;
             }
+
             // Validate password length
             if (passwordInput.value.length < 8) {
                 alert('Password must be at least 8 characters long.');
                 event.preventDefault();
                 return;
             }
+
             // Validate terms checkbox
             if (!termsCheckbox.checked) {
                 alert('Please agree to the Terms and Conditions.');
                 event.preventDefault();
                 return;
-            });
+            }
+        });
     </script>
             
 </body>
