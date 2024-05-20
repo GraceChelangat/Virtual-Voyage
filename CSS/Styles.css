@@ -55,8 +55,8 @@ nav ul li a {
 
 /* Footer styles */
 footer {
-    background-color: transparent;
-    color: #fff;
+    background-color: #555;
+    color: #f5f2f2;
     text-align: center;
     padding: 10px;
     width: 100%;
@@ -298,16 +298,6 @@ h4 {
 
 .blog-post p {
     color: #555;
-}
-
-footer {
-    background: rgba(255, 255, 255, 0.8);
-    text-align: center;
-    padding: 10px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    border-top: 1px solid #ccc;
 }
 
 footer p {

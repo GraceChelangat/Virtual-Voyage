@@ -46,5 +46,22 @@
     <footer>
         <p>&copy; 2024 Virtual Voyage. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.getElementById('signin-form').addEventListener('submit', function(event) {
+            // Get form inputs
+            var emailInput = document.getElementById('email');
+            var passwordInput = document.getElementById('password');
+            var termsCheckbox = document.querySelector('input[name="terms"]');
+
+            // Validate email address structure
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(emailInput.value)) {
+                alert('Please enter a valid email address.');
+                event.preventDefault();
+                return;
+            };
+    </script>
+            
 </body>
 </html>
