@@ -12,7 +12,7 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    color: aliceblue;
+    color: rgb(45, 46, 46);
     background-image: url(Images/Background\ 1.jpg);
     background-size: cover;
 }
@@ -446,53 +446,50 @@ section#technology p {
     }
 }
 
-form {
-    display: flex;
-    flex-direction: column;
+#signup {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-form label {
-    margin: 10px 0 5px;
-    color: #555;
-}
-
-form input {
-    padding: 10px;
+#signup h2 {
+    text-align: center;
     margin-bottom: 20px;
+}
+
+#signup form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#signup form input[type="text"],
+#signup form input[type="email"],
+#signup form input[type="password"],
+#signup form input[type="checkbox"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-form button {
-    padding: 10px;
-    background: #333;
+#signup form button {
+    background-color: #333;
     color: #fff;
     border: none;
+    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
 }
 
-form button:hover {
-    background: #555;
+#signup form button:hover {
+    background-color: #555;
 }
 
-footer {
-    background: rgba(255, 255, 255, 0.8);
+.account-info {
     text-align: center;
-    padding: 10px;
-    border-top: 1px solid #ccc;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-footer p {
-    margin: 0;
-}
-
-@media (max-width: 768px) {
-    section {
-        padding: 15px;
-        margin: 10px;
-    }
+    margin-top: 20px;
 }
