@@ -13,7 +13,6 @@ body {
     padding: 0;
     text-align: center;
     color: rgb(45, 46, 46);
-    background-image: url(Images/Background\ 1.jpg);
     background-size: cover;
 }
 
@@ -440,7 +439,7 @@ section#technology p {
     width: 50%;
     margin: 0 auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: transparent;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -488,7 +487,7 @@ section#technology p {
     width: 50%;
     margin: 0 auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: transparent;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
