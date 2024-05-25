@@ -531,47 +531,54 @@ section#technology p {
 }
 
 
-  .dropdown{
-    float:left;
-    overflow:hidden;
-  }  
+/* Dropdown styles */
 
-.dropdown .dropbtn{
-    font-size:16px;
-    border:none;
-    outline:none;
-    color:rgb(22, 237, 104);
-    padding:14px 16px;
-    background-color:inherit;
-    font-family: inherit;
+.dropdown {
+    position: relative;
+    display: inline-block;
+    text-align: right;
 }
-.dropdown:hover ,dropbtn{
-    background-color: rgb(230, 36, 244);
+
+.dropdown .dropbtn {
+    background-color: #333;
+    color: #f5f8f6;
+    padding: 14px 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
 }
-  /*Dropdown content */
-  .dropdown-content{
-    display:none;
-    position:absolute;
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
     background-color: #f9f9f9;
-    min-width:160px;
-    box-shadow: 0px 8px 15px 0px rgba(0,0,0,0.2);
-    z-index:1;
+    min-width: 160px;
+    box-shadow: 0px 8px 15px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
 
-  }
- 
-  .dropdown-content a{
-    float:none;
-    color:black;
-    padding:12px 16px;
-    text-decoration:none;
-    display:block;
-    text-align:left;
-  }
- 
-    .dropdown-content a:hover{
-        background-color: #ddd;
-    }
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: right;
+    background-color: #f9f9f9;
+}
 
-  .dropdown:hover .dropdown-content{
-    display:block;
-  }
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #555;
+}
+
+.top-right-nav{
+    float: left;
+}
