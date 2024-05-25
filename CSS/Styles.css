@@ -582,3 +582,28 @@ section#technology p {
 .top-right-nav{
     float: left;
 }
+
+        /* Style for the collapsible content */
+        .collapse-content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        /* Style for the "Read more" button */
+        .collapse-button {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+
+        /* Style for the expanded content */
+        input[type="checkbox"] + .collapse-content {
+            display: none;
+        }
+
+        input[type="checkbox"]:checked + .collapse-content {
+            display: block;
+        }
