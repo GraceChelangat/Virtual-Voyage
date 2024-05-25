@@ -579,7 +579,7 @@ section#technology p {
     background-color: #555;
 }
 
-.top-right-nav{
+.topnav-right{
     float: left;
 }
 
@@ -606,4 +606,45 @@ section#technology p {
 
         input[type="checkbox"]:checked + .collapse-content {
             display: block;
+        }
+
+
+        #capture-details {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        #capture-details h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        #capture-details label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        #capture-details input[type="checkbox"],
+        #capture-details textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        #capture-details button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        #capture-details button:hover {
+            background-color: #555;
         }
