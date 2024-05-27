@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/Styles.css">
-    <title>Capture Goods or Service Details</title>
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="icon" type="image/x-icon" href="Images/Background 1.jpg">
 </head>
-<body>
+<body style="background-image: url(Images/Background\ 1.jpg); background-size: cover;">
     <header>
         <h1>Virtual Voyage</h1>
         <nav>
@@ -16,20 +17,21 @@
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="destinations.html">Destinations</a></li>
                 <li><a href="FAQ.html">FAQ</a></li>
-                <li><a href="Pricings and packages.html">Pricings and Packages</a></li>
+                <li><a href="PricingAndPackages.html">Pricing and Packages</a></li>
                 <li><a href="Technology.html">Technology</a></li>
                 <li><a href="OrderDetails.html">Order Details</a></li>
-                <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">My Account</a>
-                    <div class="dropdown-content">
-                        <a href="Sign Up.html">Sign Up</a>
-                        <a href="SignIn.html">Sign In</a>
+                <div class="topnav-right">
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">My Account</a>
+                        <div class="dropdown-content">
+                            <a href="Sign Up.html">Sign Up</a>
+                            <a href="SignIn.html">Sign In</a>
+                        </div>
+                    </li>
                     </div>
-                </li>
             </ul>
         </nav>
     </header>
-
     <section id="capture-details">
         <h2>Capture Goods or Service Details</h2>
         <form action="submit.php" method="post">
@@ -39,7 +41,7 @@
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
 
-            <label for="details">Check the package that you would like :</label>
+            <label for="details">Select the package that you would like :</label>
             <label for="details1">
                 <input type="checkbox" id="details1" name="details[]" value="Single Tour">
                 Single Tour - $10
