@@ -46,9 +46,6 @@
         </form>
     </section>
 
-    <footer>
-        <p>&copy; 2024 Virtual Voyage. All rights reserved.</p>
-        <p>Email us at virtualvoyage@gmail.com</p>
-    </footer>
+    <?php include_once("Template/footer.php")?>
 </body>
 </html>
