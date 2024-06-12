@@ -34,9 +34,6 @@
         <p class="account-info">Already have an account? <a href="SignIn.html">Sign In</a></p>
     </section>
 
-    <footer>
-        <p>&copy; 2024 Virtual Voyage. All rights reserved.</p>
-        <p>Email us at virtualvoyage@gmail.com</p>
-    </footer>
+    <?php include_once("Template/footer.php")?>
 </body>
 </html>
