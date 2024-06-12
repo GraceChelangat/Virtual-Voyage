@@ -10,6 +10,7 @@
 <body style="background-image: url(Images/Background\ 1.jpg); background-size: cover;">
 <?php include_once("Template/nav.php");?>
 
+
     <!-- About Us Section -->
     <section id="about-us">
         <h2>About Us</h2>
@@ -40,11 +41,7 @@
         </div>
     </section>
 
-        <!-- Footer -->
-        <footer>
-            <p>&copy; 2024 Virtual Voyage. All rights reserved.</p>
-            <p>Email us at virtualvoyage@gmail.com</p>
+    <?php include_once("Template/footer.php")?>
 
-        </footer>
 </body>
 </html>
