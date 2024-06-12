@@ -29,10 +29,7 @@
         <p class="account-info">Don't have an account? <a href="SignUp.html">Sign Up</a></p>
     </section>
 
-    <footer>
-        <p>&copy; 2024 Virtual Voyage. All rights reserved.</p>
-        <p>Email us at virtualvoyage@gmail.com</p>
-    </footer>
+    <?php include_once("Template/footer.php")?>
 
     <script>
         document.getElementById('signin-form').addEventListener('submit', function(event) {
