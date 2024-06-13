@@ -1,4 +1,4 @@
-<?php include_once("Template/nav.php");?>
+<?php include_once("Template/header.php");?>
 <body style="background-image: url(Images/Background\ 1.jpg); background-size: cover;">
 <?php include_once("Template/nav.php");?>
     <section id="signup">

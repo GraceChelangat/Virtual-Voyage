@@ -1,4 +1,4 @@
-<?php include_once("Template/nav.php");?>
+<?php include_once("Template/header.php");?>
 <body style="background-image: url(Images/Background%201.jpg); background-size: cover; color: aliceblue;">
 <?php include_once("Template/nav.php");?>
     <!-- Home Section -->
