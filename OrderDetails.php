@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
-    <link rel="stylesheet" href="CSS/styles.css">
-    <link rel="icon" type="image/x-icon" href="Images/Background 1.jpg">
-</head>
+<?php include_once("Template/nav.php");?>
 <body style="background-image: url(Images/Background\ 1.jpg); background-size: cover;">
 <?php include_once("Template/nav.php");?>
     <section id="capture-details">
