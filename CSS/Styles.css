@@ -77,7 +77,7 @@ section.faq {
         margin: 10px 0;
     }
     .topnav-right {
-        float: none;
+        float: right;
     }
 }
 
