@@ -10,6 +10,9 @@
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
 
+            <label for="destination">Destination:</label>
+            <input type="destination" id="destination" name="destination" required>
+
             <label for="details">Select the package that you would like :</label>
             <label for="details1">
                 <input type="checkbox" id="details1" name="details[]" value="Single Tour">
