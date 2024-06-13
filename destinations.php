@@ -12,7 +12,7 @@
                 <div class="destination-content">
                     <h4>Soar through the majesty of the Great Barrier Reef</h4>
                     <p>Experience underwater exploration, historical insights, and cultural interactions.</p>
-                    <button onclick="location.href='#booking'">Book Your Virtual Tour</button>
+                    <button onclick="location.href='bookTours.php'">Book Your Virtual Tour</button>
                 </div>
             </div>
             <div class="destination-item">
@@ -20,7 +20,7 @@
                 <div class="destination-content">
                     <h4>Experience the grandeur of the Eiffel Tower</h4>
                     <p>Explore the historical significance and architectural beauty of this iconic landmark.</p>
-                    <button onclick="location.href='#booking'">Book Your Virtual Tour</button>
+                    <button onclick="location.href='bookTours.php'">Book Your Virtual Tour</button>
                 </div>
             </div>
             <h3>Africa</h3>
@@ -29,7 +29,7 @@
                 <div class="destination-content">
                     <h4>Explore the Beauty of Maasai Mara, Kenya</h4>
                     <p>Embark on a virtual journey through the vast savannas and witness the incredible wildlife of Maasai Mara.</p>
-                    <button onclick="location.href='#booking'">Book Your Virtual Tour</button>
+                    <button onclick="location.href='bookTours.php'">Book Your Virtual Tour</button>
                 </div>
             </div>
             <div class="destination-item">
@@ -37,7 +37,7 @@
                 <div class="destination-content">
                     <h4>Discover the Mysteries of the Pyramids of Giza, Egypt</h4>
                     <p>Unravel the secrets of one of the Seven Wonders of the Ancient World and delve into Egypt's rich history.</p>
-                    <button onclick="location.href='#booking'">Book Your Virtual Tour</button>
+                    <button onclick="location.href='bookTours.php'">Book Your Virtual Tour</button>
                 </div>
             </div>
             
