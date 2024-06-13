@@ -55,5 +55,4 @@
 
     <!-- Footer -->
     <<?php include_once("Template/footer.php")?>
-</body>
-</html>
+
