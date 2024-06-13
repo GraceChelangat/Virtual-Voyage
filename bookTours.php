@@ -2,7 +2,7 @@
 <body style="background-image: url(Images/Background\ 1.jpg); background-size: cover;">
 <?php include_once("Template/nav.php");?>
     <section id="capture-details">
-        <h2>Capture Goods or Service Details</h2>
+        <h2>Book your Virtual Tour today</h2>
         <form action="submit.php" method="post">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
