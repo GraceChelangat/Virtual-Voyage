@@ -1,6 +1,33 @@
+<?php require_once("includes/db_connect.php");?>
 <?php include_once("Template/header.php");?>
 <body style="background-image: url(Images/Background\ 1.jpg); background-size: cover;">
 <?php include_once("Template/nav.php");?>
+
+<?php
+    require_once("includes/db_connect.php");
+    include_once("Template/header.php");
+    include_once("Template/nav.php");
+
+    if(isset($_POST["send_message"])){
+        $name = mysqli_real_escape_string($conn, addslashes($_POST["fullname"]));
+        $email = mysqli_real_escape_string($conn, addslashes($_POST["email_address"]));
+        $password = mysqli_real_escape_string($conn, addslashes($_POST["subject_line"]));
+        $confirm_password = mysqli_real_escape_string($conn, addslashes($_POST["message"]));
+
+        $insert_details = "INSERT INTO users (name, email, password, confirm_password) VALUES ('$name', '$email', '$password', '$confirm_password')";
+
+        if ($conn->query($insert_details) === TRUE) {
+            header("Location: Sign Up.php");
+            exit();
+        } else {
+            echo "Error: " . $insert_details . "<br>" . $conn->error;
+        }
+    }
+?>
+
+
+
+
     <section id="signup">
         <h2>Sign Up</h2>
         <form action="/submit_signup" method="post">
@@ -13,8 +40,8 @@
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
 
-            <label for="confirm-password">Confirm Password:</label>
-            <input type="password" id="confirm-password" name="confirm-password" required>
+            <label for="confirm_password">Confirm Password:</label>
+            <input type="password" id="confirm_password" name="confirm-password" required>
 
             <label>
                 <input type="checkbox" name="terms" required>
