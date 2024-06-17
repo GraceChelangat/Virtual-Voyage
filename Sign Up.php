@@ -9,10 +9,10 @@
     include_once("Template/nav.php");
 
     if(isset($_POST["send_message"])){
-        $name = mysqli_real_escape_string($conn, addslashes($_POST["fullname"]));
-        $email = mysqli_real_escape_string($conn, addslashes($_POST["email_address"]));
-        $password = mysqli_real_escape_string($conn, addslashes($_POST["subject_line"]));
-        $confirm_password = mysqli_real_escape_string($conn, addslashes($_POST["message"]));
+        $name = mysqli_real_escape_string($conn, addslashes($_POST["name"]));
+        $email = mysqli_real_escape_string($conn, addslashes($_POST["email"]));
+        $password = mysqli_real_escape_string($conn, addslashes($_POST["password"]));
+        $confirm_password = mysqli_real_escape_string($conn, addslashes($_POST["confirm_password"]));
 
         $insert_details = "INSERT INTO users (name, email, password, confirm_password) VALUES ('$name', '$email', '$password', '$confirm_password')";
 
