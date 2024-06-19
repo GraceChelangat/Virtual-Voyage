@@ -4,17 +4,23 @@ USE `virtualvoyage`;
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
-  `userId` int(1) NOT NULL AUTO_INCREMENT,
-  `name` varchar(60) NOT NULL DEFAULT '',
-  `email` varchar(60) NOT NULL DEFAULT '',
-  `password` text DEFAULT NULL,
-  `confirm_password` text DEFAULT NULL,
+  `userId` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(60) NOT NULL,
+  `email` varchar(60) NOT NULL,
+  `password` text NOT NULL,
   `datecreated` datetime NOT NULL DEFAULT current_timestamp(),
   `dateupdated` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`userId`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-TRUNCATE TABLE `users`;
-
-INSERT INTO `users` (`userId`, `name`, `email`, `password`, `confirm_password`, `datecreated`, `dateupdated`) VALUES
-(1, 'alex', 'alex@yahoo.com', 'ygfdc', 'ygfdc', '2024-06-17 11:40:15', '2024-06-17 11:40:15'),
+DROP TABLE IF EXISTS `book_tours`;
+CREATE TABLE IF NOT EXISTS `book_tours` (
+  `bookingId` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(60) NOT NULL,
+  `email` varchar(60) NOT NULL,
+  `details` text NOT NULL,
+  `additional_details` text,
+  `datecreated` datetime NOT NULL DEFAULT current_timestamp(),
+  `dateupdated` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`bookingId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
