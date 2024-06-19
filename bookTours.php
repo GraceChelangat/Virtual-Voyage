@@ -1,3 +1,24 @@
+<?php
+require_once("includes/db_connect.php");
+include_once("Template/header.php");
+include_once("Template/nav.php");
+
+if(isset($_POST["send_message"])){
+    $name = mysqli_real_escape_string($conn, addslashes($_POST["name"]));
+    $email = mysqli_real_escape_string($conn, addslashes($_POST["email"]));
+    $details = mysqli_real_escape_string($conn, addslashes(implode(", ", $_POST["details"])));
+    $additional_details = mysqli_real_escape_string($conn, addslashes($_POST["additional_details"]));
+
+    $insert_details = "INSERT INTO book_tours (name, email, details, additional_details) VALUES ('$name', '$email', '$details', '$additional_details')";
+
+    if ($conn->query($insert_details) === TRUE) {
+        header("Location: bookTours.php");
+        exit();
+    } else {
+        echo "Error: " . $insert_details . "<br>" . $conn->error;
+    }
+}
+?>
 
 <section id="capture-details">
     <h2>Book your Virtual Tour today</h2>
