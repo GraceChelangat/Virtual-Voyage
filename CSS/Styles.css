@@ -650,3 +650,54 @@ form button {
 form button:hover {
     background-color: #555;
 }
+
+section#terms {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #f2f2f2; /* Light grey background */
+    border: 1px solid #ddd; /* Light grey border */
+    border-radius: 5px; /* Rounded corners */
+  }
+  
+  section#terms h2 {
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: #000; /* Black headings */
+  }
+  
+  section#terms p {
+    line-height: 1.5; /* Increase line spacing for readability */
+    margin-bottom: 10px;
+  }
+
+  .dropdown { /* Style for dropdown list item */
+    position: relative; /* Make the dropdown positioned relative to its parent */
+    display: inline-block; /* Allow other inline elements to sit next to it */
+    /* Removed float: right; as it's now handled in the HTML */
+  }
+  
+  .dropdown-content { /* Style for dropdown content */
+    display: none; /* Hide the dropdown content initially */
+    position: absolute; /* Make the dropdown content positioned absolutely relative to its parent */
+    background-color: #f1f1f1; /* Light grey background color */
+    min-width: 160px; /* Set a minimum width for the dropdown content */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Add a subtle shadow */
+    z-index: 1; /* Ensure the dropdown content appears above other elements */
+    /* No changes needed for right-aligned dropdown */
+  }
+  
+  .dropdown:hover .dropdown-content { /* Show dropdown content on hover */
+    display: block;
+  }
+  
+  .dropdown-content a { /* Style for dropdown menu items */
+    color: black; /* Black text color */
+    padding: 12px 16px; /* Add padding to menu items */
+    text-decoration: none; /* Remove underline from links */
+    display: block; /* Make each menu item a block element */
+  }
+  
+  .dropdown-content a:hover { /* Hover effect for menu items */
+    background-color: #ddd; /* Light grey background on hover */
+  }
