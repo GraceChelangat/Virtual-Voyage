@@ -3,20 +3,40 @@ require_once("includes/db_connect.php");
 include_once("Template/header.php");
 include_once("Template/nav.php");
 
-if(isset($_POST["send_message"])){
-    $name = mysqli_real_escape_string($conn, addslashes($_POST["name"]));
-    $email = mysqli_real_escape_string($conn, addslashes($_POST["email"]));
-    $details = mysqli_real_escape_string($conn, addslashes(implode(", ", $_POST["details"])));
-    $additional_details = mysqli_real_escape_string($conn, addslashes($_POST["additional_details"]));
+// Checks if form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "VirtualVoyage";
 
-    $insert_details = "INSERT INTO book_tours (name, email, details, additional_details) VALUES ('$name', '$email', '$details', '$additional_details')";
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
-    if ($conn->query($insert_details) === TRUE) {
-        header("Location: bookTours.php");
-        exit();
-    } else {
-        echo "Error: " . $insert_details . "<br>" . $conn->error;
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
     }
+
+    // Prepare to fetch user info and insert into database
+    $stmt = $conn->prepare("INSERT INTO Book_Tours (name, email, destination, details, additional_details) VALUES (?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssss", $name, $email, $destination, $details, $additional_details);
+
+    // Set parameters and execute
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $destination = $_POST['destination'];
+    $details = isset($_POST['details']) ? implode(", ", $_POST['details']) : '';
+    $additional_details = $_POST['additional_details'];
+    
+    $stmt->execute();
+
+    // Close statement and connection
+    $stmt->close();
+    $conn->close();
+
+    // Provide feedback to the user
+    echo "<p>Thank you! Your message has been sent successfully!</p>";
 }
 ?>
 
