@@ -1,3 +1,4 @@
+<body style="background-image: url(Images/Background\ 1.jpg); background-size: cover;">
 <?php
 require_once("includes/db_connect.php");
 include_once("Template/header.php");
