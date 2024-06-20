@@ -52,7 +52,7 @@ if ($result->num_rows > 0) {
   ?>
     <section id="signin">
         <h2>Sign In</h2>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <form action="index.php" method="post">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
 
