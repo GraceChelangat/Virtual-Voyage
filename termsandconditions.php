@@ -3,6 +3,8 @@
 <?php include_once("Template/nav.php");?>
     <!-- Terms and Conditions Section -->
 
+
+    <section id="Terms-container">
     <h1>Virtual Voyage - Terms and Conditions</h1>
   <section id="terms">
     <p>Welcome to Virtual Voyage! These Terms and Conditions ("Terms") govern your use of our website and the virtual tours offered ("Services"). By accessing or using our Services, you agree to be bound by these Terms.</p>

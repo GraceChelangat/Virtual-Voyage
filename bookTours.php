@@ -4,6 +4,7 @@ require_once("includes/db_connect.php");
 include_once("Template/header.php");
 include_once("Template/nav.php");
 
+
 // Checks if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $servername = "localhost";
@@ -20,8 +21,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Prepare to fetch user info and insert into database
-    $stmt = $conn->prepare("INSERT INTO Book_Tours (name, email, destination, details, additional_details) VALUES (?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssss", $name, $email, $destination, $details, $additional_details);
+    $stmt = $conn->prepare("INSERT INTO Book_Tours (name, email, destination, details, additional_details, date) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssss", $name, $email, $destination, $details, $additional_details, $date);
 
     // Set parameters and execute
     $name = $_POST['name'];
@@ -29,6 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $destination = $_POST['destination'];
     $details = isset($_POST['details']) ? implode(", ", $_POST['details']) : '';
     $additional_details = $_POST['additional_details'];
+    $date = $_POST['date'];   
     
     $stmt->execute();
 
@@ -73,6 +75,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="checkbox" id="details4" name="details[]" value="Ultimate Package">
             Ultimate Package - $150
         </label>
+
+        <br>
+        <label for="date">Select the date of your tour:</label>
+        <input type="date" id="date" name="date" required>
+        
+
         <br>
         <textarea id="additional_details" name="additional_details" rows="4" placeholder="Additional details"></textarea>
         <br>

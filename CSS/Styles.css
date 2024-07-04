@@ -651,28 +651,38 @@ form button:hover {
     background-color: #555;
 }
 
-section#terms {
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #f2f2f2;
-    border: 1px solid #ddd;
-    border-radius: 5px; 
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px; 
-  }
-  
-  section#terms h2 {
-    margin-top: 20px;
-    font-size: 1.5em;
-    color: #000; 
-  }
-  
-  section#terms p {
-    line-height: 1.5;
-    margin-bottom: 10px;
-  }
 
+section#terms-container {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: center;
+  }
+  /* Style the "Terms and Conditions" section */
+section#terms {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: center;
+  }
+  
+  /* Style all headings (h1, h2) within the "Terms and Conditions" section */
+  section#terms h1,
+  section#terms h2 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Style all paragraphs (p) within the "Terms and Conditions" section */
+  section#terms p {
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
 
   .dropdown { 
     position: relative; 
@@ -702,3 +712,45 @@ section#terms {
   .dropdown-content a:hover { 
     background-color: #ddd; 
   }
+
+  #bookings {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 85%;
+}
+
+.header h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.Booking-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.Booking-table th, .Booking-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+    color: #555;
+}
+
+.Booking-table th {
+    background-color: #333;
+    color: #fff;
+}
+
+.Booking-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+    color: #555;
+}
+
+.Booking-table tr:hover {
+    background-color: #ddd;
+}
+
