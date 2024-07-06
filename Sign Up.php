@@ -28,6 +28,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $confirm_password = $_POST['confirm_password'];
     $agreed_terms = isset($_POST['terms']) ? 1 : 0; // If checkbox is checked, set to 1; otherwise, set to 0
 
+
+    //verify that the full name contains only letters, space and single quotation
+    if(ctype_alpha(str_replace("","",str_replace("\'","",$name)))=== FALSE){
+        $_SESSION["nameletter_err"]="Wrong name format";
+        $_SESSION["error"]="";
+
+
+
+    }
     // Validate user input (optional, but recommended)
     if (empty($name)) {
         $signup_message = "Please enter your name.";
