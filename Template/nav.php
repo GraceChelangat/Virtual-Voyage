@@ -11,7 +11,7 @@
       <li><a href="Technology.php">Technology</a></li>
       <li><a href="bookTours.php">Book Tour</a></li>
       <li><a href="termsandconditions.php">Terms and Conditions</a></li>
-      <li><a href="viewbookings.php">Bookings</a></li>
+      <li><a href="View_Bookings.php">Bookings</a></li>
       <li class="dropdown" style="float: right;"> <a href="#">My Account</a>
         <ul class="dropdown-content">
           <li><a href="Sign Up.php">Sign Up</a></li>
