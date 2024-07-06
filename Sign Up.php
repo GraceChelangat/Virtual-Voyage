@@ -51,7 +51,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = "INSERT INTO users(name, email, password, agreed_terms) VALUES ('$name', '$email', '$password', '$agreed_terms')";
 
         if (mysqli_query($conn, $sql)) {
-            $signup_message = "Thank you for signing up! You can now log in.";
+            // Redirect to index page with the name parameter
+        header("Location: index.php?welcome_message=" . urlencode("Welcome, $name!"));
         } else {
             $signup_message = "ERROR: " . mysqli_error($conn);
         }
