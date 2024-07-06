@@ -1,4 +1,9 @@
 <?php
+require_once("includes/db_connect.php");
+include_once("Template/header.php");
+include_once("Template/nav.php");
+
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -35,6 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $conn->query("SELECT * FROM Book_Tours WHERE id=$id");
     $row = $result->fetch_assoc();
 ?>
+    <section id="capture-details">
     <form action="update.php" method="post">
         <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
         <label for="name">Name:</label>
@@ -62,9 +68,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         <button type="submit">Update</button>
     </form>
+    </section>
 <?php
 }
 
 // Close connection
 $conn->close();
 ?>
+
+<?php include_once("Template/footer.php"); ?>
