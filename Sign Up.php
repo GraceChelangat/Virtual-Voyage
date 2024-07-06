@@ -6,7 +6,7 @@ include_once("Template/nav.php");
 
 $signup_message = ""; // Initialize message variable
 
-// Checks if form is submitted
+// Process form submission if method is POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Connect to database
     $servername = "localhost";
@@ -18,25 +18,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Check connection
     if ($conn->connect_error) {
-        die("Connection failed: " + mysqli_connect_error());
+        die("Connection failed: " . $conn->connect_error);
     }
 
-    // Set parameters (**WARNING: Storing passwords in plain text is a SERIOUS security risk!**)
-    $name = $_POST['name']; // **UNSAFE** - User input directly inserted into query
-    $email = $_POST['email']; // **UNSAFE** - User input directly inserted into query
-    $password = $_POST['password']; // **UNSAFE** - Password stored in plain text!
+    // Set parameters
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
     $agreed_terms = isset($_POST['terms']) ? 1 : 0; // If checkbox is checked, set to 1; otherwise, set to 0
 
-
-    //verify that the full name contains only letters, space and single quotation
-    if(ctype_alpha(str_replace("","",str_replace("\'","",$name)))=== FALSE){
-        $_SESSION["nameletter_err"]="Wrong name format";
-        $_SESSION["error"]="";
-
-
-
-    }
     // Validate user input (optional, but recommended)
     if (empty($name)) {
         $signup_message = "Please enter your name.";
@@ -47,28 +38,47 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } elseif (!isset($_POST['terms'])) {
         $signup_message = "Please agree to the terms and conditions.";
     } else {
-        // **WARNING: Storing passwords in plain text is a SERIOUS security risk!**
-        $sql = "INSERT INTO users(name, email, password, agreed_terms) VALUES ('$name', '$email', '$password', '$agreed_terms')";
+        // Check if email already exists in the database
+        $sql_check_email = "SELECT * FROM users WHERE email = ?";
+        $stmt_check_email = $conn->prepare($sql_check_email);
+        $stmt_check_email->bind_param("s", $email);
+        $stmt_check_email->execute();
+        $result_check_email = $stmt_check_email->get_result();
 
-        if (mysqli_query($conn, $sql)) {
-            // Redirect to index page with the name parameter
-        header("Location: index.php?welcome_message=" . urlencode("Welcome, $name!"));
+        if ($result_check_email->num_rows > 0) {
+            $signup_message = "Email already exists. Please choose another email.";
         } else {
-            $signup_message = "ERROR: " . mysqli_error($conn);
+            // Insert new user into database
+            $sql_insert_user = "INSERT INTO users (name, email, password, agreed_terms) VALUES (?, ?, ?, ?)";
+            $stmt_insert_user = $conn->prepare($sql_insert_user);
+            $hashed_password = password_hash($password, PASSWORD_DEFAULT); // Hash the password
+
+            $stmt_insert_user->bind_param("sssi", $name, $email, $hashed_password, $agreed_terms);
+            if ($stmt_insert_user->execute()) {
+                // Redirect to index page with the name parameter
+                header("Location: index.php?welcome_message=" . urlencode("Welcome, $name!"));
+                exit();
+            } else {
+                $signup_message = "ERROR: " . $conn->error;
+            }
+            // Close statement for insertion
+            $stmt_insert_user->close();
         }
+        // Close statement for email check
+        $stmt_check_email->close();
     }
 
     // Close connection
-    mysqli_close($conn);
+    $conn->close();
 }
 ?>
 
 <section id="signup">
     <h2>Sign Up</h2>
-    <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post"> <?php if (!empty($signup_message)) : ?>
-            <div class="message"><?php echo $signup_message; ?></div>
-        <?php endif; ?>
-
+    <?php if (!empty($signup_message)) : ?>
+        <div class="message"><?php echo $signup_message; ?></div>
+    <?php endif; ?>
+    <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
 
