@@ -1,4 +1,44 @@
+<style>
+table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 50px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #333;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <body style="background-image: url(Images/Background\ 1.jpg); background-size: cover;">
 <?php
+
  include_once("Template/header.php");
  include_once("Template/nav.php");
 
