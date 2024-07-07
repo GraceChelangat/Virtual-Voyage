@@ -1,6 +1,7 @@
-<?php include_once("Template/header.php");?>
+<?php include_once("Template/header.php"); ?>
 <body style="background-image: url(Images/Background\ 1.jpg); background-size: cover;">
-    <?php include_once("Template/nav.php");?>
+
+    <?php include_once("Template/nav.php"); ?>
 
     <!-- Destinations Section -->
     <section id="destinations">
@@ -41,10 +42,3 @@
                 </div>
             </div>
             
-        </div>
-        <!-- Repeat destination-category div for more categories -->
-    </section>
-
-    <!-- Footer -->
-    <<?php include_once("Template/footer.php")?>
-
