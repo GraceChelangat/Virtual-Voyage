@@ -4,7 +4,6 @@ require_once("includes/db_connect.php");
 include_once("Template/header.php");
 include_once("Template/nav.php");
 
-
 // Checks if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $servername = "localhost";
@@ -20,26 +19,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    // Prepare to fetch user info and insert into database
-    $stmt = $conn->prepare("INSERT INTO Book_Tours (name, email, destination, details, additional_details, date) VALUES (?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssss", $name, $email, $destination, $details, $additional_details, $date);
-
-    // Set parameters and execute
+    // Prepare to fetch user info and check if user exists
     $name = $_POST['name'];
     $email = $_POST['email'];
-    $destination = $_POST['destination'];
-    $details = isset($_POST['details']) ? implode(", ", $_POST['details']) : '';
-    $additional_details = $_POST['additional_details'];
-    $date = $_POST['date'];   
-    
-    $stmt->execute();
 
-    // Close statement and connection
-    $stmt->close();
+    $checkUserStmt = $conn->prepare("SELECT * FROM users WHERE name = ? AND email = ?");
+    $checkUserStmt->bind_param("ss", $name, $email);
+    $checkUserStmt->execute();
+    $result = $checkUserStmt->get_result();
+
+    if ($result->num_rows > 0) {
+        // User exists, proceed with booking
+        $destination = $_POST['destination'];
+        $details = isset($_POST['details']) ? implode(", ", $_POST['details']) : '';
+        $additional_details = $_POST['additional_details'];
+        $date = $_POST['date'];
+
+        $stmt = $conn->prepare("INSERT INTO Book_Tours (name, email, destination, details, additional_details, date) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssssss", $name, $email, $destination, $details, $additional_details, $date);
+        $stmt->execute();
+
+        // Close statement and connection
+        $stmt->close();
+        echo "<p>Thank you! Your message has been sent successfully!</p>";
+    } else {
+        // User does not exist
+        echo "<p>Sorry, your name and email are not in our database. Please register first.</p>";
+    }
+
+    $checkUserStmt->close();
     $conn->close();
-
-    // Provide feedback to the user
-    echo "<p>Thank you! Your message has been sent successfully!</p>";
 }
 ?>
 
@@ -80,7 +89,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <label for="date">Select the date of your tour:</label>
         <input type="date" id="date" name="date" required>
         
-
         <br>
         <textarea id="additional_details" name="additional_details" rows="4" placeholder="Additional details"></textarea>
         <br>
