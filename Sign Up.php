@@ -6,6 +6,12 @@ include_once("Template/nav.php");
 
 $signup_message = ""; // Initialize message variable
 
+// Function to validate password
+function validate_password($password) {
+    $pattern = "/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\W_]).{8,}$/";
+    return preg_match($pattern, $password);
+}
+
 // Process form submission if method is POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Connect to database
@@ -33,6 +39,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $signup_message = "Please enter your name.";
     } elseif (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $signup_message = "Please enter a valid email address.";
+    } elseif (!validate_password($password)) {
+        $signup_message = "Password must be at least 8 characters long and include at least one capital letter, one small letter, one number, and one special character.";
     } elseif (empty($password) || $password !== $confirm_password) {
         $signup_message = "Passwords don't match or are empty.";
     } elseif (!isset($_POST['terms'])) {
