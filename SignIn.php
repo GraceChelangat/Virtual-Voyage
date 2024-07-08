@@ -11,18 +11,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = trim($_POST["email"]);
     $password_input = $_POST["password"];
 
-    // Connect to database
-    $servername = "localhost";
-    $username = "root"; 
-    $password = ""; 
-    $dbname = "VirtualVoyage";
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
 
     // Prepare SQL query to select user based on email
     $sql = "SELECT * FROM users WHERE email = ?";
@@ -77,3 +65,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </section>
 
 <?php include_once("Template/footer.php"); ?>
+        </body>
