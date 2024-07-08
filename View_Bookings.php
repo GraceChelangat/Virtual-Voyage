@@ -44,23 +44,12 @@ table {
 
  include_once("Template/header.php");
  include_once("Template/nav.php");
+ require_once("includes/db_connect.php");
 
  // Check for success message
  if (isset($_GET['message'])) {
      echo '<p>' . htmlspecialchars($_GET['message']) . '</p>';
  }
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "VirtualVoyage";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 
 // Fetch all bookings
 $sql = "SELECT id, name, email, destination, details, additional_details, date FROM Book_Tours";
@@ -101,3 +90,4 @@ if ($result->num_rows > 0) {
 
 $conn->close();
 ?>
+<?php include_once("Template/footer.php"); ?>
