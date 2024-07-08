@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Close statement and connection
         $stmt->close();
-        echo "<p>Thank you! Your message has been sent successfully!</p>";
+        header("Location: View_Bookings.php");
     } else {
         // User does not exist
         echo "<p>Sorry, your name and email are not in our database. Please register first.</p>";
