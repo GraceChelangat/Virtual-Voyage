@@ -13,9 +13,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Connect to database
     $servername = "localhost";
-    $username = "root"; // Replace with your actual credentials
-    $password = ""; // Replace with your actual password
-    $dbname = "VirtualVoyage"; // Replace with your database name
+    $username = "root"; 
+    $password = ""; 
+    $dbname = "VirtualVoyage";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
 

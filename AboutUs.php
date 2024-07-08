@@ -29,7 +29,6 @@
         <div class="testimonials">
             <h3>Testimonials</h3>
             <p>"The immersive experience and educational value of Virtual Voyage tours are amazing!" - Happy Customer</p>
-            <!-- Repeat for more testimonials -->
         </div>
     </section>
 
