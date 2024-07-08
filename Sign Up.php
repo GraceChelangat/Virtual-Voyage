@@ -14,18 +14,6 @@ function validate_password($password) {
 
 // Process form submission if method is POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Connect to database
-    $servername = "localhost";
-    $username = "root"; 
-    $password = "";
-    $dbname = "VirtualVoyage"; 
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
 
     // Set parameters
     $name = $_POST['name'];
@@ -106,7 +94,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <button type="submit" name="send_message">Sign Up</button>
     </form>
-    <p class="account-info">Already have an account? <a href="SignIn.html">Sign In</a></p>
+    <p class="account-info">Already have an account? <a href="SignIn.php">Sign In</a></p>
 </section>
 
 <?php include_once("Template/footer.php"); ?>
+    </body>
